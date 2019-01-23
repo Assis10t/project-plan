@@ -1,0 +1,272 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{advdate}
+\newcounter{subgoals}
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usepackage{blindtext}
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west,yshift=-100pt,xshift=100pt]%
+        at (current page.north west)
+        {\includegraphics[height=3cm]{uni.png}};
+    \end{tikzpicture}
+
+%\includegraphics[width=0.15\textwidth]{uni.png}\hspace{0.5cm}
+\hspace{2.5cm}\textsc{\LARGE University of Edinburgh}\\[1.5cm] % Name of your university/college
+\textsc{\Large System Design Project}\\[0.5cm] % Major heading such as course name
+\textsc{\large Group 10: Assis10t}\\[0.5cm] % Minor heading 
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Project Plan}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+\begin{minipage}{0.45\textwidth}
+\begin{flushleft} \large
+\emph{Members:}\\
+Fathimath Anna \textsc{Ali}
+\newline Claire \textsc{Doherty}
+\newline Jacob \textsc{Dyer}
+\newline Kieran \textsc{Cunningham}
+\newline Freddie \textsc{Bawden}
+\newline Alexander Philipp \textsc{Rader}
+\newline Oktay \textsc{Sen}
+\newline Zach \textsc{Whitelaw}
+\newline Hristiyan \textsc{Yaprakov}
+
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.25\textwidth}
+\begin{flushright} \large
+\emph{Student UUN:} \\
+\textsc{s1545423} 
+\textsc{s1616573}
+\textsc{s1620398}
+\textsc{s1634706}
+\textsc{s1636469}
+\textsc{s1611382}
+\textsc{s1663938}
+\textsc{s1688197}
+\textsc{s1639828}
+\end{flushright}
+\end{minipage}\\[1.5cm]
+
+%\includegraphics[width=0.2\textwidth]{uni.png}
+
+% Supervisor/Mentor
+\Large \emph{Mentor:}\\
+Branislav \textsc{Pilnan}\\[1cm] 
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large
+\today
+}\\[2cm] 
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+%\includegraphics[width=0.4\textwidth]{uni.png}
+%\includegraphics{unnamed.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+\section*{Introduction}
+
+In the United Kingdom, 57\% of surveyed consumers in 2016 selected 'ready' for the automated purchasing of products. The selecting of 'ready' corresponding meant consumers wanted automated purchasing of products within the next two years. 
+\newline\newline
+The consumers' primary reasoning to their choice via the conducted survey, was due to the benefit of saving time and money. Automated purchasing of products in the market results in increasingly convenient grocery shopping, resulting in the drastic growth of 'ingredient box' companies.
+\newline\newline
+\textit{HelloFresh}, an 'ingredient box' company, experienced a 68\% global increase in active customers and a 105\% increase in the United States, in 2017.
+\newline\newline
+B.O.B, Brilliant Online Buying, adopts the automated purchasing of products. Users are allowed to schedule the collection of their finalised order. Thus, highlighting convenient online shopping, eliminates the con of scheduling home deliveries, and capitalises on the drastic growth of the 'ingredient box' trend.
+\newline\newline
+(DO A RUN DOWN OF THE FUNCTIONALITY OR B.O.B???)
+
+\section*{Goals Description}
+
+\subsection*{User Problem}
+
+ANOTHER YEEEET - We could talk a bit about current warehouse robots and their limitations.
+\newline\newline
+\url{https://www.youtube.com/watch?v=TW0rFh5GnKs} - Walmart scans shelves to look for out of stock items and missing/incorrect labels.
+\newline\newline
+\url{https://www.iamrobotics.com/products/swift/}
+\url{https://www.youtube.com/watch?time_continue=68&v=8bJfOn_d5CU} - IAM Swift = Super BOB. 
+\newline\newline
+\url{https://www.youtube.com/watch?v=iR9SkoueTZ0} - Toru robot hooks items from above \newline
+\url{https://www.fanucamerica.com/industrial-solutions/manufacturing-applications/picking-and-packing-robots} (other cool packing robots)
+\newline\newline
+\url{https://www.youtube.com/watch?v=ecftHVqxRpg} - AutoStore stacks boxes on top of each other - items that are not sold regularly sink to bottom (not good for food with short expiration dates
+\newline\newline 
+\url{https://www.youtube.com/watch?v=JXkMevbjga4} - Amazon Kiva moves shelves to human who removes items 
+\newline\newline
+\url{https://www.youtube.com/watch?v=JzlsvFN_5HI} - me 
+\newline\newline
+\url{https://www.youtube.com/watch?v=ABaM5szeVFE} - Fraunhofer IPA uses vacuum but seems to only be able to pick up boxes
+\newline\newline 
+\url{https://www.youtube.com/watch?v=NAfzOfPj6Js} - Toyota HSR used gripper to pick up but may damage soft objects 
+\newline\newline
+Both shoppers and retailers have problems that can be addressed with our solution.
+
+\subsubsection*{End Users}
+
+Real-life shopping is time-consuming: commuters may not have enough time to travel around a supermarket and wait in a queue, or parents may find shopping with children too stressful. In addition, items may be hard to find, or not available at all which the user won't know until they're there. Regular online shopping can solve some of these issues however it can be hard to schedule a time for home deliveries in advance, and it is not always an option if you need food on the same day.
+\newline\newline
+In 2016, 57 percent of surveyed consumers in the UK said that they will be ready for automated purchasing of goods within the next 2 years. \cite{munden_makris_fletcher_2016}
+\subsubsection*{Retailers} 
+BIG YEET --- Not sure if Bob will actually solve space issues because he might need special self-restocking shelves.
+Robot may be faster/more efficient than a human. (can we back this up?). Robots will find it easier to keep up with multiple orders in a row.
+\newline\newline
+Space problems, especially in cities. Staff is more expensive than robots in the long run. Due to inflation, rising costs and stiff competition, retailers are operating on small profit margins of 2-3 percent. \cite{ho_2017}
+
+
+\subsection*{Robot Solution}
+YEET more details are needed: how will the robot find the item, what is the setting, how will packing work etc. How do we assure that Jacob, the only hardware guy, is not a bottleneck and does not have to work too much? Need to show that we have the necessary skills.
+\newline\newline
+The robot will receive a path from the server.
+It will follow this path to get to the item.
+The robot moves by following lines on the floor. There will be junctions that lead into each shelf which the robot can count to keep track of its position.
+\newline\newline
+When the robot reaches the location of the shelf that the item is on, it will elevate the grabber to the height of the shelf.
+It then moves closer to the shelf so that the arms are within reach of the item.
+\newline\newline
+The two arms will go behind the item and drag it into the basket.
+The robot can carry multiple items at one time, and once it has collected all items in the order, or has run out of space, it will return to the unloading area.
+\newline\newline
+Combining robot, app and backend.
+\newline
+App: the user can browse our catalogue of goods, or choose a predefined recipe to order the ingredients for.
+\newline
+Backend: the robot will communicate with a server, which knows the position of every item. It will also calculate in which order to collect items, so that more fragile ones will be collected last and not be squished.
+\newline
+Inspiration: Sainsbury's Click and Collect but more automated.
+\newline
+Ocado has automated grocery packing.
+
+\subsection*{Technical Subgoals}
+The robot consists of four main parts. For the simplest acceptable solution, two of them have to be implemented.
+The minimal solution requires:
+
+\begin{enumerate}
+    \item Movement: the robot should be able to move backwards and forwards along a shelf. 
+    \item Grabbing: the robot should be able to grab an item and move it.
+\setcounter{subgoals}{\value{enumi}}
+\end{enumerate}
+A desired solution would include two more goals:
+\begin{enumerate}
+\setcounter{enumi}{\value{subgoals}}
+    \item Lifting: to be space efficient, shelves have multiple levels, so it is desirable for the robot to be able to lift and lower itself.
+    \item A proper solution will put the items in a locker for the user to collect at their convenience. 
+    Stretch goals could include: multiple shelves with the robot turning, obstacle detection/avoidance, free-moving robot. These would only be implemented if the core product works well and there is substantial time left.
+\end{enumerate}
+
+\subsubsection*{Milestones}
+
+\begin{enumerate}
+    \item Robot can move along a line. App and robot can communicate with each other through backend.
+    \newline
+    First demo.
+    \item Robot can grab and bag an item. App provides an interface to choose item. Bagging could be as simple as bringing it to a station where a human picks it up. This depends on how difficult this task will be
+    \newline
+    Second demo.
+    \item Robot can lift. Backend calculates best order to pick items up.
+    \newline
+    Third demo.
+    \item Polishing and refinement, maybe stretch goals.
+    \newline
+    Final demo.
+\end{enumerate}
+
+Depending on the difficulties arising, the robot can be scaled down to the minimal solution or up to include a stretch goal.
+\newline\newline
+The backend has to maintain a database of all the items, including data like how frail they are. It needs to calculate in which order to collect them and how many fit on the robot and in the shopping bag. 
+\newline\newline
+The app should provide a user interface for selecting items in its simplest form. A more desirable solution would include a mechanism to unlock the locker.
+
+
+\section*{Tasks To Achieve Goals}
+
+BLAH BLAH BLAH
+\newline
+BLAH BLAH
+
+\section*{Team Working Process}
+\subsection*{Management Structure}
+After some initial meetings it was clear that the team was excited to start but also weary of the project falling behind and creating clashes of interest between other university courses. A solution was devised to allow us to be highly flexible and to easily recover from slipping schedules. 
+\newline\newline
+For the duration of the project we will use a combination of organic structure and matrix management to maximize the productivity of our team. The organic paradigm states that you should not have a centralized decision maker but should instead have a group agreement on decisions - this decentralizes decision making as well as empowering the whole team. This structure merges well with a matrix approach to project management due to its promotion team members being highly transferable. 
+\newline\newline
+The matrix model is differs from traditional project management schemes as it sees team members working on many different projects at once. Speaking with mentors and experts involved with the SDP course; it was clear that a common problem was having a single point of failure; for example having only one person able to start the robot. By adopting the matrix model we can reduce this risk as many people will be involved with different aspects of the project.
+\newline\newline
+While the organic model’s transferability and communication is great, following this paradigm rigidly is often impractical for fast development due to the complete decentralization of decision making. This issue was discussed within the group, and as a result we appointed 3 team leaders.
+\newline\newline
+A team leaders role will be to stay informed about their domain of the project, make fast decisions about small aspects of a domain and to look ahead and predict when we will need to focus our attention on their domain. We split our task into three domains:
+\newline
+Robot Hardware, Jacob: This leader will be responsible for the construction and mechanics of the robot. 
+Robot Software, Kieran: This leader will be responsible for the on board vision and other software to drive the robot
+Web, Oktay and Harry: These leaders will be responsible for the user front-end and the server to communicate with the robots
+\newline\newline
+The rest of the group will be assigned to different aspects of the project depending on the demand. This model offers great flexibility and the ability to easily focus attention on a single aspect of the project if it is falling behind schedule. This would not be possible with a bureaucratic model teams are highly specialized and take longer to switch between teams. 
+\subsection*{Progress Monitoring}
+
+
+\section*{Budgeting}
+
+\begin{table}[ht]
+\caption{TEST}
+\centering
+\begin{tabular}{| p{4cm} | p{5cm} | p{4cm} |}
+\hline
+Risk & Prevention & Countermeasure \\
+\hline
+Deadline For Section Of Not Met & Acting on feedback received via team leaders ... & Efficiently assigning members to handle section due to flexible working structure \\
+\hline
+Deadline For Section Of Not Met & 6 & 7 \\
+\hline
+Deadline For Section Of Not Met & 6 & 7 \\
+\hline
+Deadline For Section Of Not Met & 6 & 7 \\
+\hline
+\end{tabular}
+\end{table}
+
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{refs} % Entries are in the "refs.bib" file
+
+\end{document}
